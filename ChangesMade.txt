@@ -1,9 +1,10 @@
-<?php
+This file lists the changes made to the program.
 
-echo "hello";
+Changed the database connection to mine.
 
 
-?>
+
+
 
 
 

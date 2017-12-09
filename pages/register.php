@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
+    <title>Project Homepage</title>
+    <meta name="description" content="Project Homepage">
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
@@ -25,7 +25,7 @@
     Phone: <input type="text" name="phone"><br>
     Birthday: <input type="text" name="birthday"><br>
     Gender: <input type="text" name="gender"><br>
-    Password: <input type="text" name="password"><br>
+    Password: <input type="password" name="password"><br>
     <input type="submit" value="Submit form">
 </form>
 
