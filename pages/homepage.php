@@ -32,13 +32,21 @@
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="email" required>
+        <form>
+            <fieldset class="form-group">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="email" required>
+            </fieldset>
 
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+            <fieldset class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            </fieldset>
 
+            <fieldset class="form-group">
         <button type="submit">Login</button>
+            </fieldset>
+        </form>
     </div>
 
 

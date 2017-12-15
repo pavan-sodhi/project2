@@ -13,7 +13,7 @@ class todos extends database\collection
        $recordsSet = self::getResults($sql,$userid);
        if (isNull($recordsSet))
        {
-           return FALSE:
+           return FALSE;
        }
        else
        {

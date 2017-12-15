@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Project Homepage</title>
-    <meta name="description" content="Project Homepage">
+    <title>Registration Page</title>
+    <meta name="description" content="Registration Page">
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">

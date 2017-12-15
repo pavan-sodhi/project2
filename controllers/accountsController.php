@@ -114,14 +114,17 @@ class accountsController extends http\controller
             echo 'user not found';
         } else {
 
-            if($user->checkPassword($_POST['password']) == TRUE) {
+            if($user->checkPassword($_POST['password']) == TRUE)
+            {
 
                 echo 'login';
 
                 session_start();
                 $_SESSION["userID"] = $user->id;
 
-                print_r($_SESSION);
+            //    print_r($_SESSION);
+            header("Location: index.php?page=tasks&action=all");
+
             } else {
                 echo 'password does not match';
             }
