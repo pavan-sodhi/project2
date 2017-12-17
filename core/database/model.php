@@ -1,17 +1,35 @@
 <?php
 namespace database;
 
+use http\controller;
+
 abstract class model
 {
 
     public function save()
     {
+
+        if($this->validate() == FALSE) {
+            echo 'failed validation';
+            exit;
+        }
+        echo 'failed 1';
+        /*
         if ($this->id != '') {
             $sql = $this->update();
         } else {
             $sql = $this->insert();
             $INSERT = TRUE;
+        } */
+        if(is_null($this->id)){
+            $sql = $this->insert();
+            $INSERT = TRUE;
         }
+        else{
+            echo 'hello'.$this->isdone.'<br>';
+            $sql = $this->update();
+        }
+        echo $sql;
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $array = get_object_vars($this);
@@ -34,8 +52,9 @@ abstract class model
 
 
         return $this->id;
-
     }
+
+
 
     private function insert()
     {
@@ -50,6 +69,11 @@ abstract class model
         return $sql;
     }
 
+    public function validate() {
+
+        return TRUE;
+    }
+
     private function update()
     {
 
@@ -60,7 +84,12 @@ abstract class model
         $comma = " ";
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
-            if (!empty($value)) {
+            echo 'key is: '.$key;
+            echo 'value is: '.$value;
+            //to fix error to save 0 isdone value
+            //if (!empty($value))
+            if(isset($value))
+            {
                 $sql .= $comma . $key . ' = "' . $value . '"';
                 $comma = ", ";
             }
@@ -79,6 +108,17 @@ abstract class model
         $statement = $db->prepare($sql);
         $statement->execute();
     }
+
+    /*public function deleteAll()
+    {
+        $db = dbConn::getConnection();
+        $modelName = static::$modelName;
+        $tableName = $modelName::getTablename();
+        $sql = 'DELETE FROM ' . $tableName . ' WHERE id in' . $this->id;
+        $statement = $db->prepare($sql);
+        $statement->execute();
+    }*/
+
 }
 
 ?>

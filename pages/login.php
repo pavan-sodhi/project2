@@ -1,6 +1,6 @@
 <?php
 // page to check if user is logged in and redirect to success page after login
-    Session_start();
+/*    Session_start();
 
     $username ="user";
     $password = "password";

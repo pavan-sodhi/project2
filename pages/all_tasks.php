@@ -19,9 +19,16 @@
 <a href="index.php?page=tasks&action=create">Create Task</a>
 <?php
 //this is how you print something
+if ($data == false)
+{
+    echo '<p> You do not have any tasks. Please click on create task to create a task.</p>';
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
-
+}
+elseif  (is_array($data)){
+    print utility\htmlTable::genarateTableFromMultiArray($data);
+}
+//else { print utility\htmlTable::genarateTableFromMultiArray($data); }
+else { print utility\htmlTable::generateTableFromOneRecord($data); }
 
 ?>
 

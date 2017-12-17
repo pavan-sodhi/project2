@@ -15,7 +15,7 @@ class tasksController extends http\controller
     public static function show()
     {
         $todo = todos::findOne($_REQUEST['id']);
-        self::getTemplate('show_task', $record);
+        self::getTemplate('show_task', $todo);
     }
 
     public static function newTodoform()
@@ -28,16 +28,15 @@ class tasksController extends http\controller
 
     public static function all()
     {
-        //session_start();
-        $records = todos::findAll();
+        session_start();
+        //$records = todos::findAll();
         $userID = $_SESSION['userID'];
 
         $tasks = todos::findTasksbyID($userID);
-//        print_r($tasks);
+     //  print_r($tasks);
 
   //      echo $userID;
-
-        self::getTemplate('all_tasks', $records);
+        self::getTemplate('all_tasks', $tasks);
 
     }
     //to call the show function the url is called with a post to: index.php?page=task&action=create
@@ -50,8 +49,9 @@ class tasksController extends http\controller
         //print_r($_POST);
         $todo = new todo();
         session_start();
+        date_default_timezone_set( "America/New_York");
         $todo->ownerid = $_SESSION['userID'];
-        $todo->createdate = date_default_timezone_set( "America/New_York");
+        $todo->createddate = date("Y/m/d H:i:s");
         $todo->isdone = $_POST['isdone'];
         $todo->message = $_POST['message'];
         $todo->owneremail = $_POST['owneremail'];
@@ -100,7 +100,9 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
+        echo " delete test task controller";
+        header("Location: index.php?page=tasks&action=all");
+        //print_r($_POST);
 
     }
 

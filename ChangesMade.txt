@@ -4,6 +4,9 @@ Changed the database connection to mine.
 Added BootStrap Changes to Homepage
 Added loggedin page to start user session upon login
 
+Display task page, fixed select all query
+Show tasks for logged in user
+
 
 
 

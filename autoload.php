@@ -23,11 +23,11 @@ class Manage
     {
 
 //this is useful to see what class and namespace is being asked for
-echo "class=".$class . '<br>';
+//echo "class=".$class . '<br>';
         $path = 'controllers/' . str_replace('\\', '/', $class) . '.php';
 //this is useful to see what path is being asked for
 
-echo "path=".$path . '<br>';
+//echo "path=".$path . '<br>';
         if (is_file($path)) {
             include $path;
             return;

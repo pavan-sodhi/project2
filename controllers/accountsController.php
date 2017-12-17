@@ -57,13 +57,15 @@ class accountsController extends http\controller
             $user->birthday = $_POST['birthday'];
             $user->gender = $_POST['gender'];
             //$user->password = $_POST['password'];
-            $user->password = $user->setPassword($_POST['password']);
+            //mistake here , turn the set password to static method on a utility class
+            $user->password = account::setPassword($_POST['password']);
             $user->save();
             header("Location: index.php?page=accounts&action=all");
 
         } else {
 
             echo 'already registered';
+            self::getTemplate('error',$error);
         }
 
     }
@@ -86,7 +88,8 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+        header("Location: index.php");
+//        header("Location: index.php?page=accounts&action=all");
 
     }
 
@@ -95,6 +98,12 @@ class accountsController extends http\controller
         $record = accounts::findOne($_REQUEST['id']);
         $record->delete();
         header("Location: index.php?page=accounts&action=all");
+    }
+
+    public static function logout()
+    {   session_start();
+        unset($_SESSION['userID']);
+        header("Location: index.php");
     }
 
     //this is to login, here is where you find the account and allow login or deny.
@@ -106,34 +115,19 @@ class accountsController extends http\controller
         //you might want to add something that handles if the password is invalid, you could add a page template and direct to that
         //after you login you can use the header function to forward the user to a page that displays their tasks.
         //        $record = accounts::findUser($_POST['uname']);
-
         $user = accounts::findUserbyEmail($_REQUEST['email']);
-
-
         if ($user == FALSE) {
             echo 'user not found';
         } else {
-
             if($user->checkPassword($_POST['password']) == TRUE)
             {
-
-                echo 'login';
-
+                echo 'Welcome login';
                 session_start();
                 $_SESSION["userID"] = $user->id;
-
-            //    print_r($_SESSION);
+                print_r($_SESSION);
             header("Location: index.php?page=tasks&action=all");
-
-            } else {
-                echo 'password does not match';
-            }
-
-        }
-
-
-
-
+            } else { echo 'Sorry, Password does not match';}
+         }
     }
 
 }
