@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
+    <title>All Tasks</title>
+    <meta name="description" content="All Tasks">
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
@@ -16,7 +16,9 @@
 </head>
 
 <body>
-<a href="index.php?page=tasks&action=create">Create Task</a>
+<a href="index.php">Home</a>
+<a href="index.php?page=tasks&action=create"> Create Task </a>
+<a href="index.php?page=accounts&action=all"> Profile </a>
 <?php
 //this is how you print something
 if ($data == false)

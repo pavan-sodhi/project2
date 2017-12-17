@@ -23,9 +23,14 @@ class accountsController extends http\controller
 
     public static function all()
     {
-
-        $records = accounts::findAll();
-        self::getTemplate('all_accounts', $records);
+        session_start();
+        $id = $_SESSION['userID'];
+//        $_SESSION["userID"] = $user->id;
+        $record = accounts::findOne($id);
+        //$record = accounts::findOne($_REQUEST['id']);
+        self::getTemplate('show_account', $record);
+        //$records = accounts::findAll();
+       // self::getTemplate('all_accounts', $records);
 
     }
     //to call the show function the url is called with a post to: index.php?page=task&action=create
@@ -60,7 +65,10 @@ class accountsController extends http\controller
             //mistake here , turn the set password to static method on a utility class
             $user->password = account::setPassword($_POST['password']);
             $user->save();
-            header("Location: index.php?page=accounts&action=all");
+            session_start();
+            $_SESSION["userID"] = $user->id;
+  //          header("Location: index.php");
+          header("Location: index.php?page=accounts&action=all");
 
         } else {
 
@@ -88,8 +96,7 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php");
-//        header("Location: index.php?page=accounts&action=all");
+         header("Location: index.php?page=accounts&action=all");
 
     }
 

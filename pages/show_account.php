@@ -15,6 +15,7 @@
     <![endif]-->
 </head>
 
+
 <body>
 
 <h1>Email: <?php echo $data->email; ?></h1>
@@ -25,7 +26,8 @@
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 
-print_r($data);
+
+//print_r($data);
 
 
 ?>
@@ -42,11 +44,11 @@ print_r($data);
     <input type="submit" value="Submit form">
 </form>
 
-
+<!--
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
-</form>
-
+<button type="submit" form="form1" value="delete">Delete</button>
+/form>
+-->
 
 <script src="js/scripts.js"></script>
 </body>

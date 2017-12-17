@@ -17,7 +17,7 @@
 
 <body>
 
-<h1>Page Not Found 404 error</h1>
+<h1>Page Not Found 404 error Message i created Notfound page under pages</h1>
 
 
 <script src="js/scripts.js"></script>
