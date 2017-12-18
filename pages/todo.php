@@ -21,7 +21,7 @@
 <form action="index.php?page=tasks&action=create" method="post">
     Owner Email: <input type="text" name="owneremail" placeholder= "test@test.com " value="<?php echo $data->owneremail; ?>"><br>
     Due Date: <input type="text" name="duedate" placeholder= "YYYY-MM-DD " value="<?php echo $data->duedate; ?>"><br>
-    Message: <input type="text" name="message" placeholder= "Your Task " value="<?php echo $data->message; ?>"><br>
+    Message: <input type="text" name="message" placeholder= "Your Task " value="<?php echo $data->message; ?>" placeholder= "Min 2 Characters "minlength="2" required ><br>
     Is Done ?: <input type="text" name="isdone" placeholder= "1 = Done, 0 = Not Done" value="<?php echo $data->isdone; ?>"><br>
 
     <input type="submit" value="Submit form">
