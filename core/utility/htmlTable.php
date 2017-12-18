@@ -1,6 +1,8 @@
 <?php
+
 namespace utility;
 //namespace MyProject\mvcName;
+
 class htmlTable
 {
     public static function genarateTableFromMultiArray($array)
@@ -16,6 +18,7 @@ class htmlTable
         foreach ($fieldHeadings as $heading) {
             $tableGen .= '<th>' . $heading . '</th>';
         }
+
         $tableGen .= '</tr>';
         foreach ($array as $record) {
             $tableGen .= '<tr>';
@@ -32,6 +35,7 @@ class htmlTable
         $tableGen .= '</table>';
         return $tableGen;
     }
+
     public static function generateTableFromOneRecord($innerArray)
     {
         $tableGen = '<table border="1" cellpadding="10"><tr>';

@@ -5,30 +5,29 @@ use http\controller;
 
 abstract class model
 {
-
     public function save()
     {
-
         if($this->validate() == FALSE) {
             echo 'failed validation';
             exit;
         }
         echo 'failed 1';
-        /*
-        if ($this->id != '') {
+        /* if ($this->id != '') {
             $sql = $this->update();
         } else {
             $sql = $this->insert();
             $INSERT = TRUE;
-        } */
-        if(is_null($this->id)){
+        }   */
+        if(is_null($this->id))
+        {
             $sql = $this->insert();
             $INSERT = TRUE;
         }
-        else{
+        else
+            {
             echo 'hello'.$this->isdone.'<br>';
             $sql = $this->update();
-        }
+            }
         echo $sql;
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
@@ -47,18 +46,12 @@ abstract class model
         if ($INSERT == TRUE) {
 
             $this->id = $db->lastInsertId();
-
         }
-
-
         return $this->id;
     }
 
-
-
     private function insert()
     {
-
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -70,13 +63,11 @@ abstract class model
     }
 
     public function validate() {
-
         return TRUE;
     }
 
     private function update()
     {
-
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -86,8 +77,7 @@ abstract class model
         foreach ($array as $key => $value) {
             echo 'key is: '.$key;
             echo 'value is: '.$value;
-            //to fix error to save 0 isdone value
-            //if (!empty($value))
+            //to fix error to save 0 isdone value //if (!empty($value))
             if(isset($value))
             {
                 $sql .= $comma . $key . ' = "' . $value . '"';
@@ -108,7 +98,6 @@ abstract class model
         $statement = $db->prepare($sql);
         $statement->execute();
     }
-
     /*public function deleteAll()
     {
         $db = dbConn::getConnection();
@@ -118,7 +107,5 @@ abstract class model
         $statement = $db->prepare($sql);
         $statement->execute();
     }*/
-
 }
-
 ?>
