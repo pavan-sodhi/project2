@@ -1,4 +1,5 @@
 <!doctype html>
+<?php include 'header.php';?>
 
 <html lang="en">
 <head>
@@ -16,15 +17,17 @@
 </head>
 
 <body>
-<h1>IS 601 Final Project website </h1>
+<!--<h1>IS 601 Final Project website </h1>
 <a href="index.php">Home</a>
 <a href="index.php?page=tasks&action=create">Create Task</a>
 <a href="index.php?page=tasks&action=all">View Tasks </a>
 
 <h1> Account Profile Display  </h1>
+-->
 
 <?php
 //this is how you print something
+
 
 print utility\htmlTable::genarateTableFromMultiArray($data);
 

@@ -1,64 +1,33 @@
-<!doctype html>
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Final Project</title>
-    <meta name="description" content="Final Project">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="SitePoint">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
+<?php include 'home_header.php';?>
 
     <h1>
         <?php //this how to print some data;
-        echo $data['site_name'];
+       // echo $data['site_name'];
         ?>
     </h1>
+
+
 
 
     <?php
     session_start();
     if(key_exists('userID',$_SESSION))
     {
-        echo '<h1><a href="index.php?page=tasks&action=all">Show My Tasks</a></h1>';
-        echo '<h1><a href="index.php?page=accounts&action=all">Show My Profile</a></h1>';
-        echo '<h1><a href="index.php?page=accounts&action=logout">Logout</a></h1>';
-
-    }else {
-
-       echo '<form action="index.php?page=accounts&action=login" method="POST">
-
+    include 'authenticated_user_menu.php';
+    echo '<div class="jumbotron jumbotron-fluid">
     <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="email" required>
-            
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            
-            <button type="submit">Login</button>
-          </div>
+        <h1 class="display-3">IS 601 Final Project</h1>
+        <p class="lead">This is a starter program to create a task for user, modify or delete those tasks. It also helps user update his profile.</p>
+    </div>
+</div>';
 
-
-</form>';
-
-        echo '<h1><a href="index.php?page=accounts&action=register">Register</a></h1>';
     }
+    else
+        {
+            include 'login_form.php';
+        }
 
     ?>
 
 
-
-<script src="js/scripts.js"></script>
-</body>
-</html>

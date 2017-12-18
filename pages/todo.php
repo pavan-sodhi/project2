@@ -1,5 +1,5 @@
 <!doctype html>
-
+<?php include 'header.php';?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,10 +19,10 @@
 
 
 <form action="index.php?page=tasks&action=create" method="post">
-    Owner Email: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
-    Due Date: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
-    Message: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
-    Is Done ?: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
+    Owner Email: <input type="text" name="owneremail" placeholder= "test@test.com " value="<?php echo $data->owneremail; ?>"><br>
+    Due Date: <input type="text" name="duedate" placeholder= "YYYY-MM-DD " value="<?php echo $data->duedate; ?>"><br>
+    Message: <input type="text" name="message" placeholder= "Your Task " value="<?php echo $data->message; ?>"><br>
+    Is Done ?: <input type="text" name="isdone" placeholder= "1 = Done, 0 = Not Done" value="<?php echo $data->isdone; ?>"><br>
 
     <input type="submit" value="Submit form">
 </form>

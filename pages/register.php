@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+<?php include 'home_header.php';?>
 <head>
     <meta charset="utf-8">
 
