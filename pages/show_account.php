@@ -35,12 +35,11 @@
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
-
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
+    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" required ><br>
+    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" ><br>
+    Email: <input type="text" name="email" value="<?php echo $data->email; ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ><br>
+    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>" placeholder= "Male/Female" ><br>
+    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>" placeholder= "YYYY-MM-DD " ><br>
     Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
     <input type="submit" value="Submit form">
 </form>

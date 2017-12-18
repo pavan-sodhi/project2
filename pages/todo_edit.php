@@ -20,10 +20,10 @@
 
 
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?> " method="post">
-    Owner Email: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
+    Owner Email: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>" placeholder= "example@abc.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ><br>
     Due Date: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
     Message: <input type="text" name="message"  value="<?php echo $data->message; ?>"><br>
-    Is Done ?: <input type="text" name="isdone" placeholder= "1 for Complete, 0 for Incomplete  " value="<?php echo $data->isdone; ?>"><br>
+    Is Done ?: <input type="text" name="isdone" placeholder= "1 for Complete, 0 for Incomplete  " value="<?php echo $data->isdone; ?>" pattern="[0|1]" ><br>
 
 
     <input type="submit" value="Submit form">

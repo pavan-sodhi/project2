@@ -20,8 +20,8 @@
 
 
 <form action="index.php?page=accounts&action=register" method="post">
-    First name: <input type="text" minlength="2" placeholder= "Min 2 Characters " maxlength="25" name="fname"><br>
-    Last name: <input type="text" minlength="2" placeholder= "Min 2 Characters" maxlength="25" name="lname"><br>
+    First name: <input type="text" minlength="2" placeholder= "Min 2 Characters "minlength="2" required name="fname"><br>
+    Last name: <input type="text" minlength="2" placeholder= "Min 2 Characters" minlength="2" maxlength="25" name="lname" required ><br>
     Email: <input type="text" name="email" placeholder= "example@abc.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ><br>
     Phone: <input type="text" minlength="1" placeholder= "973-333-4564" ><br>
     Birthday: <input type="text" name= "birthday" placeholder= "YYYY-MM-DD "><br>
