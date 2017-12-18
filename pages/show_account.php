@@ -49,6 +49,7 @@
 <button type="submit" form="form1" value="delete">Delete</button>
 /form>
 -->
+<?php include 'footer.php';?>
 
 <script src="js/scripts.js"></script>
 </body>

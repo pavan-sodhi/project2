@@ -17,7 +17,7 @@
 
 
 
-
+<?php include 'footer.php';?>
 
 <body>
 <!--<a href="index.php">Home</a>

@@ -27,7 +27,7 @@
     <input type="submit" value="Submit form">
 </form>
 
-
+<?php include 'footer.php';?>
 <script src="js/scripts.js"></script>
 </body>
 </html>

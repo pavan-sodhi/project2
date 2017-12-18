@@ -27,7 +27,7 @@ print_r($data);
 
 
 
-
+<?php include 'footer.php';?>
 <script src="js/scripts.js"></script>
 </body>
 </html>
