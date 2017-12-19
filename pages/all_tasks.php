@@ -8,6 +8,7 @@
     <meta name="description" content="All Tasks">
     <meta name="author" content="SitePoint">
 
+
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
     <!--[if lt IE 9]>
@@ -25,12 +26,6 @@
 <a href="index.php?page=accounts&action=all"> Profile </a>
 
 -->
-
-
-
-
-
-
 
 
 <?php

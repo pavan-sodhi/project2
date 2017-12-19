@@ -14,7 +14,7 @@
         width: 100%;
         background-color:grey ;
         color: white;
-        text-align: right;
+        text-align: center;
     }
 </style>
 

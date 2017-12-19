@@ -14,16 +14,19 @@
 
 </form>
 -->
-<h1><a href="index.php?page=accounts&action=register">Register</a></h1>
+<h1><a href="index.php?page=accounts&action=register">   Click here to Register</a></h1>
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-3">IS 601 Final Project</h1>
-        <p class="lead">This is a starter program to create a task for user, modify or delete those tasks. It also helps user update his profile.</p>
-    </div>
-</div>
 
-<form action="index.php?page=accounts&action=login" method="POST">
+        <p class="lead">This is a starter program to create a task for user, modify or delete those tasks. It also helps user update his profile.</p>
+
+        <!--
+        <h1><a href="index.php?page=accounts&action=register">Register</a></h1>
+-->
+
+ <form action="index.php?page=accounts&action=login" method="POST">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -41,4 +44,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+    </div>
+</div>
+
 <?php include 'footer.php';?>
+

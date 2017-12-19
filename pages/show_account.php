@@ -22,7 +22,7 @@
 <h1>Email: <?php echo $data->email; ?></h1>
 <h1>First Name: <?php echo $data->fname; ?></h1>
 <h1>Last Name: <?php echo $data->lname; ?></h1>
-
+<br>
 
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
@@ -35,8 +35,10 @@
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" required ><br>
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" ><br>
+    <font color="#8a2be2"><h5><i>Click Submit, after you edit your profile.</i></h5></font>
+
+    First Name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" required ><br>
+    Last Name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"  placeholder= "Min 2 Characters " minlength="2" maxlength="25" ><br>
     Email: <input type="text" name="email" value="<?php echo $data->email; ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ><br>
     Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>" placeholder= "Male/Female" ><br>
     Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>" placeholder= "YYYY-MM-DD " ><br>

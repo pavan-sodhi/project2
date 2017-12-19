@@ -8,6 +8,7 @@
     <meta name="description" content="Show Task">
     <meta name="author" content="SitePoint">
 
+    <link href="starter-template.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
     <!--[if lt IE 9]>

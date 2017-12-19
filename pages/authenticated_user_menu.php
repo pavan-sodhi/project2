@@ -10,10 +10,10 @@
                 <a class="nav-link" href="index.php?page=tasks&action=all">Show My Tasks <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?page=accounts&action=all">My Profile</a>
+                <a class="nav-link" href="index.php?page=accounts&action=all">My Profile <span class="sr-only">(current)</span> </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?page=accounts&action=logout">Logout</a>
+                <a class="nav-link" href="index.php?page=accounts&action=logout">Logout <span class="sr-only">(current)</span> </a>
             </li>
 
         </ul>
